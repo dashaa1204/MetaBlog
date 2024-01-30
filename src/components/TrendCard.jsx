@@ -1,4 +1,3 @@
-import { dummyArticle } from "@/dummyData/dummyArticle";
 import { Badge } from "./Badge";
 
 export const TrendCard = ({ header, image }) => {

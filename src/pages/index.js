@@ -1,28 +1,40 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { Blog } from "@/components/Blog";
+import { Slider } from "@/components/Slider";
+import { Trending } from "@/components/Trending";
+import { Post } from "@/components/Post";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
-  const { trendingCard, trendingCardW } = props;
+  const { highlight, trending, post } = props;
+  console.log(highlight);
   return (
     <div className="flex flex-col justify-center">
-      <Blog trendingCard={trendingCard} cardData={cardData} />
+      <div className="flex-col items-center inline-flex">
+        <div className="flex flex-col items-start gap-[100px]">
+          <Slider highlight={highlight} />
+          <Trending trending={trending} />
+          <Post post={post} />
+        </div>
+      </div>
     </div>
   );
 }
 
 export const getStaticProps = async () => {
-  const trendingCards = await fetch(
+  const highlights = await fetch(
     "https://dev.to/api/articles?top-1&per_page=5&state=fresh"
   );
-  const trendingCard = await trendingCards.json();
+  const highlight = await highlights.json();
 
-  const cardsData = await fetch(
-    "https://dev.to/api/articles?top-1&per_page=5&state=fresh"
+  const trendings = await fetch(
+    "https://dev.to/api/articles?top-1&per_page=4&state=fresh"
   );
-  const cardData = await cardsData.json();
+  const trending = await trendings.json();
 
-  return { props: { trendingCard, cardData } };
+  const posts = await fetch("https://dev.to/api/articles?per_page=15");
+  const post = await posts.json();
+
+  return { props: { trending, highlight, post } };
 };

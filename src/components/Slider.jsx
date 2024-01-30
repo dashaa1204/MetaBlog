@@ -1,11 +1,10 @@
 import { Badge } from "./Badge";
-import { dummyArticle } from "@/dummyData/dummyArticle";
 
-export const Slider = ({ trendingCard }) => {
+export const Slider = ({ highlight }) => {
   return (
     <div className="w-[1216px] shrink-0">
       <img
-        src={trendingCard[0].cover_image}
+        src={highlight[0].cover_image}
         alt=""
         className="flex absolute -z-50 w-[1216px] h-[600px] rounded-xl"
       />
@@ -13,13 +12,13 @@ export const Slider = ({ trendingCard }) => {
       <div className="flex flex-col w-[598px] p-10 items-start gap-6 bg-white rounded-xl ml-[11px] mt-[310px]">
         <div className="flex flex-col items-start gap-4 self-stretch">
           <Badge text="Technology" textcolor={"text-white"} />
-          <p className="text-4xl font-semibold">{trendingCard[0].title}</p>
+          <p className="text-4xl font-semibold">{highlight[0].title}</p>
         </div>
         <div className="flex items-center gap-5">
           <p>
-            {trendingCard[0].readable_publish_date}
+            {highlight[0].readable_publish_date}
             {","} {""}
-            {new Date(trendingCard[0].created_at).getFullYear()}
+            {new Date(highlight[0].created_at).getFullYear()}
           </p>
         </div>
       </div>
