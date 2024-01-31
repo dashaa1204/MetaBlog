@@ -1,22 +1,27 @@
 import { Badge } from "./Badge";
 
 export const Slider = ({ highlight }) => {
+  const tags = highlight[2].tag_list;
   return (
     <div className="w-[1216px] shrink-0">
       <img
-        src={highlight[0].cover_image}
+        src={highlight[2].cover_image}
         alt=""
         className="flex absolute -z-50 w-[1216px] h-[600px] rounded-xl"
       />
       ;
       <div className="flex flex-col w-[598px] p-10 items-start gap-6 bg-white rounded-xl ml-[11px] mt-[310px]">
         <div className="flex flex-col items-start gap-4 self-stretch">
-          <Badge text="Technology" textcolor={"text-white"} />
-          <p className="text-4xl font-semibold">{highlight[0].title}</p>
+          <div className="flex gap-4">
+            {tags.map((e, index) => {
+              return <Badge text={e} textcolor={"text-white"} key={index} />;
+            })}
+          </div>
+          <p className="text-4xl font-semibold">{highlight[2].title}</p>
         </div>
         <div className="flex items-center gap-5">
           <p>
-            {highlight[0].readable_publish_date}
+            {highlight[2].readable_publish_date}
             {","} {""}
             {new Date(highlight[0].created_at).getFullYear()}
           </p>

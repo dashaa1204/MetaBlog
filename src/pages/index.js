@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
   const { highlight, trending, post } = props;
-  console.log(highlight);
   return (
     <div className="flex flex-col justify-center">
       <div className="flex-col items-center inline-flex">
