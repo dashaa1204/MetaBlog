@@ -6,7 +6,7 @@ export const Navbar = () => {
       <p className="w-[184px] text-2xl font-bold">All Blog Post</p>
       <div className="flex w-[1216px] items-center gap-[30px]">
         <div className="flex items-center gap-5">
-          <Link href={`/blog`}>All</Link>
+          <Link href={`/blog/all`}>All</Link>
           <Link href={`/blog/design`}>Design</Link>
           <Link href={`/blog/travel`}>Travel</Link>
           <Link href={`/blog/fashion`}>Fashion</Link>

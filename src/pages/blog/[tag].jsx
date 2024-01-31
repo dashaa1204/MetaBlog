@@ -10,7 +10,7 @@ export default function Page({ data }) {
 
 export async function getServerSideProps(context) {
   console.log(context);
-  const respond = await fetch("https://dev.to/api/articles?article&");
+  const respond = await fetch("https://dev.to/api/articles");
   const data = await respond.json();
 
   return {
