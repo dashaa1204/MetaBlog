@@ -11,7 +11,7 @@ export const Navbar = () => {
           <Link href={`/blog/travel`}>Travel</Link>
           <Link href={`/blog/fashion`}>Fashion</Link>
           <Link href={`/blog/technology`}>Technology</Link>
-          <Link href={`/branding`}>Branding</Link>
+          <Link href={`/blog/branding`}>Branding</Link>
         </div>
         <p className="flex-[100] text-right">View All</p>
       </div>
