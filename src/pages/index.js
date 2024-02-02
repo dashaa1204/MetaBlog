@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Slider } from "@/components/Slider";
 import { Trending } from "@/components/Trending";
 import { Post } from "@/components/Post";
+import { Carousel } from "@/components/Carousel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +13,7 @@ export default function Home(props) {
     <div className="flex flex-col justify-center">
       <div className="flex-col items-center inline-flex">
         <div className="flex flex-col items-start gap-[100px]">
-          <Slider highlight={highlight} />
+          <Carousel highlight={highlight} />
           <Trending trending={trending} />
           <Post post={post} />
         </div>
@@ -23,7 +24,7 @@ export default function Home(props) {
 
 export const getStaticProps = async () => {
   const highlights = await fetch(
-    "https://dev.to/api/articles?top-1&per_page=5&state=fresh"
+    "https://dev.to/api/articles?top-1&per_page=4&state=fresh"
   );
   const highlight = await highlights.json();
 

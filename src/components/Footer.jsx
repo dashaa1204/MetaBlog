@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className="flex h-[495px] pt-[64px] px-[352px] flex-col items-start gap-[25px] bg-[#F6F6F7]">
+    <div className="flex h-[495px] pt-[64px] px-[352px] flex-col items-start gap-[25px] bg-[#F6F6F7] mt-24">
       <div className="flex w-[1215px] items-start gap-5">
         <div className="flex w-[289px] flex-col items-start gap-[24px] shrink-0">
           <div className="flex flex-col items-start gap-[12px]">
