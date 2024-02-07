@@ -10,7 +10,7 @@ export const Carousel = ({ highlight, index }) => {
         {highlight.map((e, index) => {
           const tag = e.tag_list;
           return (
-            <div className="carousel-item bg-black rounded-xl">
+            <div className="carousel-item bg-black rounded-xl" key={index}>
               <div
                 id={`item${index + 1}`}
                 className="w-[1216px] shrink-0 relative"
@@ -23,8 +23,14 @@ export const Carousel = ({ highlight, index }) => {
                 <div className="flex flex-col absolute top-0 w-[598px] p-10 items-start gap-6 bg-white rounded-xl ml-[11px] mt-[310px]">
                   <div className="flex flex-col items-start gap-4 self-stretch">
                     <div className="flex gap-4">
-                      {tag.map((c) => {
-                        return <Badge text={c} textcolor={"text-white"} />;
+                      {tag.map((c, index) => {
+                        return (
+                          <Badge
+                            text={c}
+                            textcolor={"text-white"}
+                            key={index}
+                          />
+                        );
                       })}
                     </div>
                     <p className="text-4xl font-semibold">{e.title}</p>
