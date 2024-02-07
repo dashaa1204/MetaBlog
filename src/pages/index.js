@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { Slider } from "@/components/Slider";
 import { Trending } from "@/components/Trending";
 import { Post } from "@/components/Post";
 import { Carousel } from "@/components/Carousel";
