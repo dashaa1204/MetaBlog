@@ -28,7 +28,9 @@ export const getStaticProps = async () => {
   );
   const highlight = await highlights.json();
 
-  const trendings = await fetch("http://localhost:5000/api/hello");
+  const trendings = await fetch(
+    "https://dev.to/api/articles?top-1&per_page=4&state=fresh"
+  );
   const trending = await trendings.json();
 
   const posts = await fetch("https://dev.to/api/articles?per_page=15");
