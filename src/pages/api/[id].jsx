@@ -9,7 +9,7 @@ export default function Page({ data }) {
 
   async function loadMoreHandler() {
     const response = await fetch(
-      `https://dev.to/api/articles?per_page=15&tag=branding&page=${pageNumber}`
+      `https://dev.to/api/articles?per_page=15&page=${pageNumber}`
     );
     const data = await response.json();
     setArticles([...articles, ...data]);
@@ -47,9 +47,11 @@ export default function Page({ data }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  const { query } = context;
+  const { id } = query;
   const respond = await fetch(
-    "https://dev.to/api/articles?per_page=15&tag=branding"
+    `https://dev.to/api/articles?per_page=15&tag=${id}`
   );
   const data = await respond.json();
 

@@ -9,7 +9,7 @@ export const Header = () => {
         <div className="flex items-center gap-[21px]">
           <div className="flex w-[667px] justify-center items-center gap-10">
             <Link href={`/`}>Home</Link>
-            <Link href={`/blog/all`}>Blog</Link>
+            <Link href={`/blog`}>Blog</Link>
             <Link href={`/contact`}>Contact</Link>
           </div>
           <div className="flex items-center gap-10">
