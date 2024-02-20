@@ -7,8 +7,14 @@ export const Trending = ({ trending }) => {
         Trending
       </h1>
       <div className="flex items-start gap-5">
-        {trending.map((card) => {
-          return <TrendCard image={card.cover_image} header={card.title} />;
+        {trending.map((card, index) => {
+          return (
+            <TrendCard
+              image={card.social_image}
+              header={card.title}
+              key={index}
+            />
+          );
         })}
       </div>
     </div>
